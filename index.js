@@ -6,7 +6,7 @@
 // No User Input when we run the code
 //
 
-
+//create a class for card and constructor for suit, rank, value
 class Card {
     constructor(suit, rank, value) {
         this.suit = suit;
@@ -14,10 +14,15 @@ class Card {
         this.value = value;
     }
 }
+
+//create a class for Deck
 class Deck {
     constructor() {
         this.cards = [];  
     }      
+
+    //createdeck function to fill the card array with 52 cards
+    // and shuffledeck function to shuffle the array
     createDeck() {
         let suits = ['clubs', 'diamonds', 'hearts', 'spades'];
         let ranks = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king'];
@@ -39,12 +44,16 @@ class Deck {
         }
     }
 }
+
+//create class player
 class Player {
     constructor(name) {
         this.playerName = name;
         this.playerCards = [];
     }
 }
+
+//create board class
 class Board {
     constructor() {
         this.cardsInMiddle = [];
@@ -87,10 +96,10 @@ class Board {
 
         // compare the cards and count to scores
 
-        if(value.indexOf(player1Card.value) > value.indexOf(player2Card.value)) { Card =
+        if(Deck.indexOf(player1Card.Deck) > Deck.indexOf(player2Card.Deck)) { Card =+
             player1Score++;
 
-         } else if (value.indexOf(player1Card.value) < value.indexOf(player2Card.value)) { Card =
+         } else if (Deck.indexOf(player1Card.Deck) < Deck.indexOf(player2Card.ranks)) { Card =+
             player2Score++;
           }   
 
@@ -114,36 +123,16 @@ class Board {
 
     }
 }
-let warGame = new Board();
-warGame.start('Tom', 'Jerry');
-console.log(warGame.players);
+        let gameBoard = d();
+        gameBoard.start('player1', 'player2');
+
+        console.log(gameBoard.players)
 
    
  
           
-         //  compare card values and count to scores
-
- 
- 
+      
           
- 
- 
-          /** determiner a winner for the round
-          * play another round... how many rounds are there?
-          * what happens when all the rounds are over? declare a winner for the game? 
-          * how are we tracking who wins?
-          */
-         
- 
-         //for loop does something 26 times
-    
-             //p1 plays a card.... p2 plays a card....
-             //compare them
-             //if/else to determine a winner
-             //how are you tracking the points per round??
-        
-         //all 26 rounds are done after the loop
-         //what do you do after the rounds are over?
  
  
  
