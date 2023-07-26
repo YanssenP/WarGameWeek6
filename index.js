@@ -18,8 +18,8 @@ class Card {
 //create a class for Deck
 class Deck {
     constructor() {
-        this.cards = [];  
-    }      
+        this.cards = [];
+    }
 
     //createdeck function to fill the card array with 52 cards
     // and shuffledeck function to shuffle the array
@@ -29,18 +29,18 @@ class Deck {
         let value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
         for (let i = 0; i < suits.length; i++) {
             for (let j = 0; j < ranks.length; j++) {
-              this.cards.push(new Card(suits[i], ranks[i], value[i]));
+                this.cards.push(new Card(suits[i], ranks[i], value[i]));
             }
         }
     }
     shuffleDeck() {
-       let location1, location2, tmp;
-       for (let i = 0; i < 1000; i++) {
-           location1 = Math.floor((Math.random() * this.cards.length));
-           location2 = Math.floor((Math.random() * this.cards.length));
-           tmp = this.cards[location1];
-           this.cards[location1] = this.cards[location2];
-           this.cards[location2] = tmp;
+        let location1, location2, tmp;
+        for (let i = 0; i < 1000; i++) {
+            location1 = Math.floor((Math.random() * this.cards.length));
+            location2 = Math.floor((Math.random() * this.cards.length));
+            tmp = this.cards[location1];
+            this.cards[location1] = this.cards[location2];
+            this.cards[location2] = tmp;
         }
     }
 }
@@ -66,7 +66,7 @@ class Board {
         //create a deck.... put cards in the deck, shuffle the deck
         let d = new Deck();
         d.createDeck();
-        d.shuffleDeck();    
+        d.shuffleDeck();
         //pass each player the cards
         this.players[0].playerCards = d.cards.slice(0, 26);
         this.players[1].playerCards = d.cards.slice(26, 52);
@@ -75,11 +75,7 @@ class Board {
         deal 26 cards to each player by doing a loop desk that has been created and push the 2 cards for player1 and player2
         */
 
-        const player1 = [];
-        const player2 = [];
-        for (let i= 0; i < 26; i++) {
-            player1.push(Deck[i]);
-            player2.push(Deck[i + 26]);
+
 
 
         //create variables for scores
@@ -87,52 +83,52 @@ class Board {
         let player1Score = 0;
         let player2Score = 0;
 
-
+        let player1 = this.players[0].playerCards
+        let player2 = this.players[1].playerCards
         // each player plays a card, iterate through the turns and play the first element in the array
- 
-         while (player1.length > 0 && player2.length > 0) {
+
+        while (player1.length > 0 && player2.length > 0) {
             let player1Card = player1.shift();
-            let player2card = player2.shift();
+            let player2Card = player2.shift();
 
-        // compare the cards and count to scores
+            // compare the cards and count to scores
 
-        if(Deck.indexOf(player1Card.Deck) > Deck.indexOf(player2Card.Deck)) { Card =+
-            player1Score++;
+            if (player1Card.value > player2Card.value) {
+                player1Score++;
 
-         } else if (Deck.indexOf(player1Card.Deck) < Deck.indexOf(player2Card.ranks)) { Card =+
-            player2Score++;
-          }   
+            } else if (player2Card.value > player1Card.value) {
+                player2Score++;
+            }
 
-        //display the scores and declare the winner
-        console.log(`player 1: ${player1Score} points`);
-        console.log(`player 2: ${player2Score} points`);
+            //display the scores and declare the winner
+            console.log(`player 1: ${player1Score} points`);
+            console.log(`player 2: ${player2Score} points`);
+        }
         if (player1Score > player2Score) {
             console.log("Player 1 wins!");
 
         } else if (player1Score < player2Score) {
             console.log("player2 wins!");
 
-        } else { 
+        } else {
             console.log("it's a tie!")
         }
 
-        }
-       
 
-        }
+
 
     }
+
 }
-        let gameBoard = d();
-        gameBoard.start('player1', 'player2');
+let warGame = new Board();
+warGame.start('player1', 'player2');
 
-        console.log(gameBoard.players)
+console.log(warGame.players)
 
-   
- 
-          
-      
-          
- 
- 
- 
+
+
+
+
+
+
+
